@@ -1,1 +1,94 @@
-// 
+# TIMER FUNCTION
+
+		var number = 15;
+		var count;
+
+		function timer(){
+            counter = setInterval(decrement, 1000);
+        }
+
+        function decrement(){
+            number--;
+            // Show the number in the #show-number tag.
+            $('#show-number').html('<h2>' + number + '</h2>');
+
+            // Once number hits zero...
+            if (number === 0){
+                timesUp();
+            }
+
+		}
+
+		function timesUp(){
+			$(mainDiv).html(timesUp HTML);
+
+		}
+
+# A page with a Start button is on the page
+	/ Create DIV Button
+
+# When you hover the Start button, the color changes
+	/ $(buttonID).hover(function(){
+		$(this).css(background-color, blue);
+		})
+
+# When Start's clicked, the button disappears a page with a question and options appear
+
+# Create a CLICK event that loads Question 1 function
+
+	/ $(buttonID).click(question1);
+
+- At the top of the Q & A page, there is a countdown for 10 seconds
+- Clicking the correct answer will show a 'You are correct!' and an image
+ 
+	/ function question1(){
+
+		timer();
+		$(mainDiv).html(HTML FORMAT);
+
+		$(#answer1).click(function(){
+			$(mainDiv).html(correctAnswer1 HTML);
+			numCorrect++;
+		});
+
+# Clicking the incorrect answer will show 'That is wrong' and the correct answer / image
+
+		$(#answer2).click(function(){
+			$(mainDiv).html(wrongAnswer1 HTML);
+			numWrong++;
+		});
+
+		$(#answer3).click(function(){
+			$(mainDiv).html(wrongAnswer1 HTML);
+			numWrong++;
+		});
+
+# When you hover over the answers, they change color
+
+	/ $(buttonID).hover(function(){
+		$(this).css(background-color, blue);
+		})
+
+	
+# The correct answer page will disappear in 3 seconds
+
+	/	var resultTimer = setInterval(nextQuestion, 1000);
+			function nextQuestion(){
+			$(mainDiv).html(html for Quesiton2);
+			}
+
+	
+	# The incorrect answer page will disappear in 3 seconds
+
+# Not selecting an aswer in 15 seconds will show 'Time is up' and the correct answer / image
+
+	/   timesUp();
+
+# After all fo the questions are answered, you are taken to a results page
+
+	$('#correct').html('<h2>Correct</h2>' + '<p>' + correct + '</p>');
+	$('#wrong').html('<h2>Wrong</h2>' + '<p>' + wrong + '</p>');
+
+	# There is a button to start over
+
+	$(#button).click(start();
