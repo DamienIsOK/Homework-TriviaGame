@@ -1,3 +1,5 @@
+// SEE LINES 156 - 164 for comments on where I am lost
+
 $(document).ready(function(){
 
 // Timer function. This counts down from 5, then stops and prints 'Time is up'
