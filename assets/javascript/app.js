@@ -5,6 +5,10 @@ $(document).ready(function(){
 var number = 5;
 var counter;
 var firstQuestion = false;
+var secondQuestion = false;
+var thirdQuestion = false;
+var fourthQuestion = false;
+var fifthQuestion = false;
 
 var timer = function(){
     counter = setInterval(decrement, 1000);
@@ -18,7 +22,7 @@ var decrement = function(){
 	// Just logging the results to make sure it works
     console.log(number--);
     $('#countdown').html('<h2> Seconds remaining: ' + number + '</h2>');
-    if (number === 0){
+    if (number == 0){
         stop();
         console.log('Time is up!');
     }
@@ -119,20 +123,55 @@ $("#startButton")
 
 		});
 
-});
+// Wrong answer page 1
+
+var wrongAnswerPage1 = function(){
+	$("#mainText").html(
+	"<p> Wrong</p>"
+
+	);
+}
+
+// Question two
+
+
+$("#wrongAnswerPage1")
+	.click(timer);
+	firstQuestion = true;
+		$(this).click(function(){
+			$("#mainText")
+				.html(	
+					"<p>" + questionsObj.question2.tagline + "</p>" + 
+					"<ul class='responses' onclick='clickMe(event)'>" + 
+					"<li>" + questionsObj.question2.answer1 + "</li>" +
+					"<li>" + questionsObj.question2.answer2 + "</li>" +
+					"<li>" + questionsObj.question2.answerCorrect + "</li>" +
+					"</ul>"
+					);
+
+		});
+
 
 var correctAnswers = ["The Thing", "Mars Attacks!", "Powder", "I Am Legend", "Superman", "The Prestige"];
 
-function clickMe(event) {
+var function clickMe(event) {
     var userSelect = $(event.target).text();
-	    // if(userSelect === questionsObj.question1.answerCorrect) {
+	    // if(userSelect == questionsObj.question1.answerCorrect) {
     if((correctAnswers.indexOf(userSelect) >= 0) && (firstQuestion = true)) {
-		console.log('That is correct');
+		console.log('That is correct #1');
 		firstQuestion = false;
-		// 
     } else {
-    	// Run the function that shows the correct answer
-    }
+		wrongAnswerPage1();
+		secondQuestion = false;
+	} {
+    	// Run incorrectAnswer function
+    } 
 }
+
+
+
+});
+
+
 
 // $(document).on('click', '.responses', clickMe);
