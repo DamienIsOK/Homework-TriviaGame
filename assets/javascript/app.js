@@ -132,7 +132,7 @@ var wrongAnswerPage1 = function(){
 	);
 }
 
-// Question two
+// Question two - DOES NOT WORK
 
 
 $("#wrongAnswerPage1")
@@ -151,8 +151,13 @@ $("#wrongAnswerPage1")
 
 		});
 
+// Tried using an array to get the correct answer as a last result
 
 var correctAnswers = ["The Thing", "Mars Attacks!", "Powder", "I Am Legend", "Superman", "The Prestige"];
+
+
+// This function should say if the answer is in the array of correctAnswers. This is where I stopped. See line 165
+// I tried seeing if the selected answer was named "answerCorrect" (from my object) but it did not work. See line 164
 
 var function clickMe(event) {
     var userSelect = $(event.target).text();
